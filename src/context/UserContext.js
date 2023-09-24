@@ -6,10 +6,12 @@ const UserContext = React.createContext({
     onLogin: () => {},
     firstName: '',
     lastName: '',
+    isManager: false
 });
 
 export const UserContextProvider = (props) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isManager, setIsManager] = useState(false);
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
 
@@ -17,10 +19,11 @@ export const UserContextProvider = (props) => {
         setIsLoggedIn(false);
     };
 
-    const loginHandler = (firstName, lastName) => {
+    const loginHandler = (firstName, lastName, isManager) => {
         setIsLoggedIn(true);
         setFirstName(firstName);
         setLastName(lastName);
+        setIsManager(isManager);
     };
 
     const contextValue = {
@@ -29,6 +32,7 @@ export const UserContextProvider = (props) => {
         onLogin: loginHandler,
         firstName: firstName,
         lastName: lastName,
+        isManager: isManager
     };
 
     return (
