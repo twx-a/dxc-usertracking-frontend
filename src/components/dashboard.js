@@ -18,7 +18,7 @@ const Dashboard = () => {
             })
             .then((response) => response.json())
             .then((data) => setUsers(data))
-            .catch((error) => console.error('Error fetching data:', error));
+            .catch((error) => console.log('Error fetching data:', error));
     },[]);
 
     //take users state and filter it based on search and showManager state.

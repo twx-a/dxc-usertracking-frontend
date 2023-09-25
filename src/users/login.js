@@ -19,8 +19,6 @@ const Login = () => {
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        console.log(email);
-        console.log(password);
         try {
             const response = await fetch('http://localhost:8080/api/user/login', {
                 method: 'POST',
