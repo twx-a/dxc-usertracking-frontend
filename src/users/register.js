@@ -70,30 +70,30 @@ const Register = () => {
 
 
     return (
-        <div class='container mt-4'>
+        <div className='container mt-4'>
             <h1>Register</h1>
             <form onSubmit={handleRegister}>
-            <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email" value={email} onChange={handleEmailChange} />
+            <div className="form-group">
+                <label htmlFor="email">Email address</label>
+                <input type="email" className="form-control" id="email" placeholder="Enter email" value={email} onChange={handleEmailChange} required />
             </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password" value={password} onChange={handlePasswordChange} />
+            <div className="form-group">
+                <label htmlFor="password">Password</label>
+                <input type="password" className="form-control" id="password" placeholder="Password" value={password} onChange={handlePasswordChange} required />
             </div>
-            <div class="form-group">
-                <label for="firstName">First Name</label>
-                <input type="text" class="form-control" id="firstName" value={firstName} onChange={handleFirstNameChange} />
+            <div className="form-group">
+                <label htmlFor="firstName">First Name</label>
+                <input type="text" className="form-control" id="firstName" value={firstName} onChange={handleFirstNameChange} required />
             </div>
-            <div class="form-group">
+            <div className="form-group">
                 <label htmlFor="lastName">Last Name</label>
-                <input type="text" class="form-control"  id="lastName" value={lastName} onChange={handleLastNameChange} />
+                <input type="text" className="form-control"  id="lastName" value={lastName} onChange={handleLastNameChange} />
             </div>
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="manager" checked={manager === 'Y'} onChange={handleManagerChange} />
-                <label class="form-check-label" for="manager">Manager</label>
+            <div className="form-check">
+                <input type="checkbox" className="form-check-input" id="manager" checked={manager === 'Y'} onChange={handleManagerChange} />
+                <label className="form-check-label" htmlFor="manager">Manager</label>
             </div>
-            <button type="submit" class="btn btn-primary my-4">Register</button>
+            <button type="submit" className="btn btn-primary my-4">Register</button>
             </form>
         </div>
     );

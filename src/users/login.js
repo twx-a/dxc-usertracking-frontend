@@ -31,7 +31,6 @@ const Login = () => {
                 }),
             });
             const data = await response.json();
-
             if (response.ok) {
                 alert('Logged in Successfully');
                 ctx.onLogin(data.firstName, data.lastName, (data.manager === 'Y' ? true : false));
@@ -47,18 +46,18 @@ const Login = () => {
 
 
     return (
-        <div class='container mt-4'>
+        <div className='container mt-4'>
             <h1>Login</h1>
             <form onSubmit={handleLogin}>
-            <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email" value={email} onChange={handleEmailChange} />
+            <div className="form-group">
+                <label htmlFor="email">Email address</label>
+                <input type="email" className="form-control" id="email" placeholder="Enter email" value={email} onChange={handleEmailChange} required />
             </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password" value={password} onChange={handlePasswordChange} />
+            <div className="form-group">
+                <label htmlFor="password">Password</label>
+                <input type="password" className="form-control" id="password" placeholder="Password" value={password} onChange={handlePasswordChange} required />
             </div>
-            <button type="submit" class="btn btn-primary my-4">Register</button>
+            <button type="submit" className="btn btn-primary my-4">Login</button>
             </form>
         </div>
     );

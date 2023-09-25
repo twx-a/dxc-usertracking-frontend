@@ -33,7 +33,7 @@ const Dashboard = () => {
     });
 
     return (
-        <div class="container mt-4">
+        <div className="container mt-4">
             <h1>Users</h1>
             <p>Hello {ctx.firstName +" "+ ctx.lastName}</p>
             <p>There are a total of {users.length} users.</p>
@@ -49,24 +49,24 @@ const Dashboard = () => {
             {ctx.isLoggedIn && 
                 <input 
                     type="checkbox" 
-                    class="form-check-input"
+                    className="form-check-input"
                     id="manager"
                     checked={onlyShowManager} 
                     onChange={(e) => setOnlyShowManager(e.target.checked)}
                 />
             }
             {ctx.isLoggedIn && 
-                <label class="form-check-label" for="manager">Show only managers</label>
+                <label className="form-check-label" htmlFor="manager">Show only managers</label>
             }
-            <div class="row">
+            <div className="row">
                 {filteredUsers.map((user) => {
                     return (
-                    <div class ="col-4">
-                        <div class='card mt-4' key={user.id}>
-                            <div class='card-body'>
-                                <p class="card-title">Name: {user.firstName} {user.lastName}</p>
-                                <p class="card-text">Email: {user.email}</p>
-                                <p class="card-text">Manager: {user.manager}</p>
+                    <div className ="col-4" key={user.id}>
+                        <div className='card mt-4' key={user.id}>
+                            <div className='card-body'>
+                                <p className="card-title">Name: {user.firstName} {user.lastName}</p>
+                                <p className="card-text">Email: {user.email}</p>
+                                <p className="card-text">Manager: {user.manager}</p>
                             </div>
                         </div>
                     </div>
